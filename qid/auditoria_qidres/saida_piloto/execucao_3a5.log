@@ -1,0 +1,154 @@
+2026-10-01 12:30:31 início; aguardando PID 1946036 (passo 3 em andamento)
+2026-10-01 12:30:31 passo 3 (retomável)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/marchi/financial_ai_project/code/b3_data/qid/auditoria_qidres/passo3_amostra.py", line 110, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/marchi/financial_ai_project/code/b3_data/qid/auditoria_qidres/passo3_amostra.py", line 82, in main
+    infos = list(ex.map(um_dia, dias))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/process.py", line 642, in _chain_from_iterable_of_lists
+    for element in iterable:
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
+2026-10-01 13:04:52 PAROU no passo 3 (D1 ou erro)
+2026-10-01 14:55:14 relançado após correção de memória (estados compactos, D1 vetorizada)
+2026-10-01 14:55:14 início; aguardando PID  (passo 3 em andamento)
+2026-10-01 14:55:14 passo 3 (retomável)
+2026-10-01 15:04:41 interrompido manualmente: pico de 148 GB num worker
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+2026-10-01 15:14:00 relançado: volume_por_instrumento em streaming (148 GB -> 4 GB); 4 workers
+2026-10-01 15:14:00 início; aguardando PID  (passo 3 em andamento)
+2026-10-01 15:14:00 passo 3 (retomável)
+{
+  "dias": 12,
+  "periodos_diarios": 12,
+  "blocos_5min": 1269,
+  "eventos": 3440287,
+  "d1_periodos_residuo_nao_zero": 0,
+  "dias_sid_alvo_nao_e_maior_volume": []
+}
+2026-10-01 15:51:04 passo 4
+id                                 diagnostico   nivel     valor  ic95_inf  ic95_sup       N                                           referencia_artigo                                                      limiar  cruzou_limiar
+D2                  R² de qid_R em (1−θ)/(1+θ)  diario  0.832418       NaN       NaN      12                                               Não reportado                                                   R² > 0,80           True
+D2                  R² de qid_A em (1−θ)/(1+θ)  diario  0.985204       NaN       NaN      12                                               Não reportado                                                   R² > 0,80           True
+D2     #Impr / #Deter (premissa da identidade)  diario  1.004595  1.003072  1.006316      12                                               Não reportado                                                   R² > 0,80          False
+D2                  R² de qid_R em (1−θ)/(1+θ)    5min  0.356264  0.239064  0.477789    1269                                               Não reportado                                                   R² > 0,80          False
+D2                  R² de qid_A em (1−θ)/(1+θ)    5min  0.955521  0.915920  0.977664    1269                                               Não reportado                                                   R² > 0,80           True
+D2     #Impr / #Deter (premissa da identidade)    5min  1.002931  1.002532  1.003326    1269                                               Não reportado                                                   R² > 0,80          False
+D3                   fração undercut, W=100 ms amostra  0.004722  0.004018  0.005533 1724516                                               Não reportado                      undercut < 10% das melhorias (W = 1 s)          False
+D3               fração recomposicao, W=100 ms amostra  0.676365  0.658492  0.692291 1724516                                               Não reportado                      undercut < 10% das melhorias (W = 1 s)          False
+D3               fração deslocamento, W=100 ms amostra  0.318912  0.303567  0.336011 1724516                                               Não reportado                      undercut < 10% das melhorias (W = 1 s)          False
+D3                  fração undercut, W=1000 ms amostra  0.000205  0.000133  0.000314 1724516                                               Não reportado                      undercut < 10% das melhorias (W = 1 s)           True
+D3              fração recomposicao, W=1000 ms amostra  0.837310  0.823286  0.850122 1724516                                               Não reportado                      undercut < 10% das melhorias (W = 1 s)          False
+D3              fração deslocamento, W=1000 ms amostra  0.162486  0.149638  0.176990 1724516                                               Não reportado                      undercut < 10% das melhorias (W = 1 s)          False
+D3                  fração undercut, W=5000 ms amostra  0.000000  0.000000  0.000000 1724516                                               Não reportado                      undercut < 10% das melhorias (W = 1 s)          False
+D3              fração recomposicao, W=5000 ms amostra  0.920928  0.913459  0.927518 1724516                                               Não reportado                      undercut < 10% das melhorias (W = 1 s)          False
+D3              fração deslocamento, W=5000 ms amostra  0.079072  0.072419  0.086724 1724516                                               Não reportado                      undercut < 10% das melhorias (W = 1 s)          False
+D4                          frac_1tick (média)  diario  0.988870  0.986750  0.991075      12 Corridas em ações restritas começam com spread ~2¢ (Fig. 3)                                     frac_1tick médio > 0,95           True
+D4                     spread_tw_ticks (média)  diario  1.011610  1.009460  1.013766      12 Corridas em ações restritas começam com spread ~2¢ (Fig. 3)                                     frac_1tick médio > 0,95          False
+D4                          frac_1tick (média)    5min  0.988898  0.986675  0.991052    1269 Corridas em ações restritas começam com spread ~2¢ (Fig. 3)                                     frac_1tick médio > 0,95           True
+D4                     spread_tw_ticks (média)    5min  1.011577  1.009415  1.013689    1269 Corridas em ações restritas começam com spread ~2¢ (Fig. 3)                                     frac_1tick médio > 0,95          False
+D5             share_1tick_impr (média diária)  diario  0.991731  0.988030  0.994527      12                                        0,80 (Tabela 1, NBB)      share_1tick_impr ≥ 0,95 E share_1tick_det_trade ≥ 0,95           True
+D5        share_1tick_det_trade (média diária)  diario  0.988569  0.984556  0.991784      12                                        0,59 (Tabela 1, NBB)      share_1tick_impr ≥ 0,95 E share_1tick_det_trade ≥ 0,95           True
+D6                              média de qid_R  diario  0.021581  0.019379  0.023705      12        Média 0,61; mediana 0,63; 0,05% negativos (Tabela 1) |média do QID^R| < 0,10 OU > 10% dos períodos com QID^R < 0           True
+D6                              média de qid_A  diario  0.091838  0.085256  0.097983      12                                               Não se aplica |média do QID^R| < 0,10 OU > 10% dos períodos com QID^R < 0          False
+D6                              média de qid_U  diario -0.999461 -0.999665 -0.999192      12                                               Não se aplica |média do QID^R| < 0,10 OU > 10% dos períodos com QID^R < 0          False
+D6                              média de qid_R    5min  0.020532  0.018782  0.022300    1269        Média 0,61; mediana 0,63; 0,05% negativos (Tabela 1) |média do QID^R| < 0,10 OU > 10% dos períodos com QID^R < 0           True
+D6                              média de qid_A    5min  0.090671  0.084717  0.096555    1269                                               Não se aplica |média do QID^R| < 0,10 OU > 10% dos períodos com QID^R < 0          False
+D6                              média de qid_U    5min -0.997862 -0.998613 -0.996984    1269                                               Não se aplica |média do QID^R| < 0,10 OU > 10% dos períodos com QID^R < 0          False
+D7         concordância R 10 ms × A (execução) amostra  0.873205  0.866120  0.880038 1715771    Mediana de 5 ms entre negócio e deterioração (seção 3.1)                                          concordância < 90%           True
+D7 concordância R 10 ms sem RLP × A (execução) amostra  0.874582  0.867692  0.881487 1715771    Mediana de 5 ms entre negócio e deterioração (seção 3.1)                                          concordância < 90%           True
+D7          concordância R 1 ms × A (execução) amostra  0.876078  0.869509  0.882594 1715771    Mediana de 5 ms entre negócio e deterioração (seção 3.1)                                          concordância < 90%           True
+2026-10-01 15:51:20 passo 5
+ id                                             diagnostico nivel     valor  ic95_inf  ic95_sup  N                    referencia_artigo                                          limiar  cruzou_limiar
+ D8        R² e b do passo 1 [qid_R|base] semana 2025-09-15  hora  0.488056       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8        R² e b do passo 1 [qid_R|base] semana 2025-09-22  hora  0.850841       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8        R² e b do passo 1 [qid_R|base] semana 2025-09-29  hora  0.518774       NaN       NaN 20    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8        R² e b do passo 1 [qid_A|base] semana 2025-09-15  hora  0.661244       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8        R² e b do passo 1 [qid_A|base] semana 2025-09-22  hora  0.492481       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8        R² e b do passo 1 [qid_A|base] semana 2025-09-29  hora  0.459834       NaN       NaN 20    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8        R² e b do passo 1 [qid_U|base] semana 2025-09-15  hora  0.759506       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8        R² e b do passo 1 [qid_U|base] semana 2025-09-22  hora  0.385477       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8        R² e b do passo 1 [qid_U|base] semana 2025-09-29  hora  0.905857       NaN       NaN 20    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8       R² e b do passo 1 [bqid_R|base] semana 2025-09-15  hora  0.380745       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8       R² e b do passo 1 [bqid_R|base] semana 2025-09-22  hora  0.789854       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8       R² e b do passo 1 [bqid_R|base] semana 2025-09-29  hora  0.509486       NaN       NaN 20    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8       R² e b do passo 1 [aqid_R|base] semana 2025-09-15  hora  0.291451       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8       R² e b do passo 1 [aqid_R|base] semana 2025-09-22  hora  0.813640       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8       R² e b do passo 1 [aqid_R|base] semana 2025-09-29  hora  0.645537       NaN       NaN 20    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8 R² e b do passo 1 [qid_R_semrlp|base] semana 2025-09-15  hora  0.499732       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8 R² e b do passo 1 [qid_R_semrlp|base] semana 2025-09-22  hora  0.848488       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8 R² e b do passo 1 [qid_R_semrlp|base] semana 2025-09-29  hora  0.508372       NaN       NaN 20    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8       R² e b do passo 1 [qid_R2|base] semana 2025-09-15  hora  0.570188       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8       R² e b do passo 1 [qid_R2|base] semana 2025-09-22  hora  0.700512       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8       R² e b do passo 1 [qid_R2|base] semana 2025-09-29  hora  0.224805       NaN       NaN 20    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8     R² e b do passo 1 [qid_R_1ms|1ms] semana 2025-09-15  hora  0.495245       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8     R² e b do passo 1 [qid_R_1ms|1ms] semana 2025-09-22  hora  0.852024       NaN       NaN 50    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D8     R² e b do passo 1 [qid_R_1ms|1ms] semana 2025-09-29  hora  0.466921       NaN       NaN 20    R² 47,35% (Fig. E.1, entre ações) R² < 0,05 OU sinal de b diferente entre semanas          False
+ D9                                DP QIDres [aqid_R|Frac1]  hora  1.289881  0.460954  2.055340 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3          False
+ D9                                   DP QIDres [aqid_R|MC]  hora  1.212696  0.525561  1.868463 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3          False
+ D9                              DP QIDres [aqid_R|Rolling]  hora  2.466394  0.446468  4.149642 75       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                               DP QIDres [aqid_R|Winsor]  hora  0.660419  0.444208  0.817043 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3          False
+ D9                                 DP QIDres [aqid_R|base]  hora  0.993158  0.431200  1.496948 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3          False
+D10                  ρ(QIDres [aqid_R|base], pct_spread_tw)  hora -0.658323 -0.918566  0.348714 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3           True
+D10                         ρ(QIDres [aqid_R|base], volume)  hora  0.004470 -0.341905  0.216177 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D10                           ρ(QIDres [aqid_R|base], qvol)  hora -0.680210 -0.913596  0.000223 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3           True
+ D9                                DP QIDres [bqid_R|Frac1]  hora  1.323034  0.658622  1.952998 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                   DP QIDres [bqid_R|MC]  hora  0.947099  0.643926  1.195429 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                              DP QIDres [bqid_R|Rolling]  hora  1.006891  0.581388  1.479052 75       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3          False
+ D9                               DP QIDres [bqid_R|Winsor]  hora  0.861796  0.623757  0.994464 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                 DP QIDres [bqid_R|base]  hora  0.882482  0.647037  1.034705 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+D10                  ρ(QIDres [bqid_R|base], pct_spread_tw)  hora -0.356806 -0.577020  0.012065 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3           True
+D10                         ρ(QIDres [bqid_R|base], volume)  hora  0.257267  0.104653  0.435056 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D10                           ρ(QIDres [bqid_R|base], qvol)  hora -0.204487 -0.493222  0.348408 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+ D9                                 DP QIDres [qid_A|Frac1]  hora  1.294091  0.727955  1.823372 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                    DP QIDres [qid_A|MC]  hora  1.355653  0.671580  1.986468 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                               DP QIDres [qid_A|Rolling]  hora  1.783544  0.727023  2.791334 75       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3          False
+ D9                                DP QIDres [qid_A|Winsor]  hora  0.925455  0.699598  1.051546 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                  DP QIDres [qid_A|base]  hora  0.951527  0.705017  1.091594 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+D10                   ρ(QIDres [qid_A|base], pct_spread_tw)  hora -0.222444 -0.472544  0.258445 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D10                          ρ(QIDres [qid_A|base], volume)  hora  0.171393  0.055187  0.341393 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D10                            ρ(QIDres [qid_A|base], qvol)  hora -0.209336 -0.455501  0.266947 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+ D9                                 DP QIDres [qid_R2|base]  hora  1.257188  0.771920  1.559187 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+D10                  ρ(QIDres [qid_R2|base], pct_spread_tw)  hora -0.388613 -0.709128  0.237358 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3           True
+D10                         ρ(QIDres [qid_R2|base], volume)  hora  0.119817  0.005576  0.299449 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D10                           ρ(QIDres [qid_R2|base], qvol)  hora -0.359284 -0.648639  0.151867 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3           True
+ D9                               DP QIDres [qid_R_1ms|1ms]  hora  1.621371  0.719364  2.359144 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                           DP QIDres [qid_R_semrlp|base]  hora  1.520289  0.699830  2.170418 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+D10            ρ(QIDres [qid_R_semrlp|base], pct_spread_tw)  hora -0.626588 -0.891835  0.272359 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3           True
+D10                   ρ(QIDres [qid_R_semrlp|base], volume)  hora  0.110507 -0.054783  0.274346 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D10                     ρ(QIDres [qid_R_semrlp|base], qvol)  hora -0.582903 -0.842441  0.072057 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3           True
+ D9                                 DP QIDres [qid_R|Frac1]  hora  2.564965  0.671621  4.167821 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                    DP QIDres [qid_R|MC]  hora  1.972572  0.679543  3.086587 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                               DP QIDres [qid_R|Rolling]  hora  2.831180  0.485303  4.722512 75       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                DP QIDres [qid_R|Winsor]  hora  1.136476  0.701566  1.429915 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                  DP QIDres [qid_R|base]  hora  1.634702  0.698800  2.430527 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+D10                   ρ(QIDres [qid_R|base], pct_spread_tw)  hora -0.667048 -0.900236  0.272701 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3           True
+D10                          ρ(QIDres [qid_R|base], volume)  hora  0.116231 -0.054168  0.275831 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D10                            ρ(QIDres [qid_R|base], qvol)  hora -0.609898 -0.866385  0.094045 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3           True
+ D9                                 DP QIDres [qid_U|Frac1]  hora  1.089988  0.522998  1.634492 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                    DP QIDres [qid_U|MC]  hora  1.191833  0.503742  1.679456 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3          False
+ D9                               DP QIDres [qid_U|Rolling]  hora  2.024500  0.535680  3.243492 75       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                DP QIDres [qid_U|Winsor]  hora  1.067812  0.447944  1.655092 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+ D9                                  DP QIDres [qid_U|base]  hora  1.125947  0.451918  1.751389 70       Média 0,08; DP 1,54 (Tabela 1)                       DP > 2,0 OU |AR(1)| > 0,3           True
+D10                   ρ(QIDres [qid_U|base], pct_spread_tw)  hora -0.073057 -0.819909  0.690154 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D10                          ρ(QIDres [qid_U|base], volume)  hora  0.110552 -0.513588  0.351293 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D10                            ρ(QIDres [qid_U|base], qvol)  hora  0.229521 -0.133398  0.516915 70 Próxima de zero (Tabela 1, Painel B)                                       |ρ| > 0,3          False
+D11                               ρ(qid_R|base, qid_A|base)  hora  0.752713  0.648117  0.893951 70                        Não se aplica                     ρ(QIDres^R, QIDres^U) < 0,5          False
+D11                               ρ(qid_R|base, qid_U|base)  hora -0.265365 -0.591359  0.277463 70                        Não se aplica                     ρ(QIDres^R, QIDres^U) < 0,5           True
+D11                               ρ(qid_A|base, qid_U|base)  hora -0.230232 -0.471712  0.136258 70                        Não se aplica                     ρ(QIDres^R, QIDres^U) < 0,5          False
+2026-10-01 15:52:54 FIM (passos 3–5 concluídos)

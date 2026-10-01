@@ -1,0 +1,13 @@
+dia,eventos,estados,anomalias_livro,conflito_causa_A,eventos_saldo_aberto,eventos_saldo_negativo,maior_volume_sid,volume_sid_alvo,pico_memoria_gb
+2025-09-15,271173,20600526,"{'change_sem_negocio': 116013, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",4536,24,4694,200001274203,16459886,
+2025-09-16,360088,21847520,"{'change_sem_negocio': 124011, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",4598,8,5014,200001274203,16875983,
+2025-09-17,503816,27459373,"{'change_sem_negocio': 162564, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",7399,8,8486,200001274203,20255081,19.2
+2025-09-18,230377,18909379,"{'change_sem_negocio': 103641, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",3386,0,3717,200001274203,13789702,
+2025-09-19,201033,17139470,"{'change_sem_negocio': 84492, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",2956,4,3259,200001274203,13420546,
+2025-09-22,244039,19986998,"{'change_sem_negocio': 97603, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",4244,7,4669,200001274203,15101935,150.2
+2025-09-23,325338,21960799,"{'change_sem_negocio': 107111, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",5302,8,6086,200001274203,16228312,15.2
+2025-09-24,252984,20015905,"{'change_sem_negocio': 99415, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",3706,2,4324,200001274203,15260996,46.3
+2025-09-25,330972,21799662,"{'change_sem_negocio': 117843, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",4885,8,5291,200001274203,15875249,49.6
+2025-09-26,229897,18054665,"{'change_sem_negocio': 95699, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",3983,2,3952,200001274203,12760174,47.6
+2025-09-29,279940,17723361,"{'change_sem_negocio': 92079, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",3624,2,3787,200001274203,13564960,50.1
+2025-09-30,210630,17350863,"{'change_sem_negocio': 89771, 'change_aumenta': 0, 'delete_orfao': 0, 'change_orfao': 0, 'oid_duplicado': 0}",3403,4,3801,200001274203,13765079,15.2

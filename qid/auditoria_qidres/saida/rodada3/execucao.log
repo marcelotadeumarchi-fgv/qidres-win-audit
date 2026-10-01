@@ -1,0 +1,91 @@
+2026-10-01 16:41:56 extração de negócios
+[
+ {
+  "dia": "2025-09-15",
+  "eventos": 1904130,
+  "d_exato": 935736,
+  "so_rlp": 968289,
+  "d_zero_nao_rlp": 105
+ },
+ {
+  "dia": "2025-09-16",
+  "eventos": 1899558,
+  "d_exato": 972506,
+  "so_rlp": 927036,
+  "d_zero_nao_rlp": 16
+ },
+ {
+  "dia": "2025-09-17",
+  "eventos": 2375281,
+  "d_exato": 1273582,
+  "so_rlp": 1101687,
+  "d_zero_nao_rlp": 12
+ },
+ {
+  "dia": "2025-09-18",
+  "eventos": 1617418,
+  "d_exato": 787583,
+  "so_rlp": 829829,
+  "d_zero_nao_rlp": 6
+ },
+ {
+  "dia": "2025-09-19",
+  "eventos": 1536516,
+  "d_exato": 767790,
+  "so_rlp": 768714,
+  "d_zero_nao_rlp": 12
+ },
+ {
+  "dia": "2025-09-22",
+  "eventos": 1711247,
+  "d_exato": 854305,
+  "so_rlp": 856823,
+  "d_zero_nao_rlp": 119
+ },
+ {
+  "dia": "2025-09-23",
+  "eventos": 1907871,
+  "d_exato": 997287,
+  "so_rlp": 910551,
+  "d_zero_nao_rlp": 33
+ },
+ {
+  "dia": "2025-09-24",
+  "eventos": 1704269,
+  "d_exato": 872993,
+  "so_rlp": 831263,
+  "d_zero_nao_rlp": 13
+ },
+ {
+  "dia": "2025-09-25",
+  "eventos": 1787708,
+  "d_exato": 983102,
+  "so_rlp": 804588,
+  "d_zero_nao_rlp": 18
+ },
+ {
+  "dia": "2025-09-26",
+  "eventos": 1405060,
+  "d_exato": 718019,
+  "so_rlp": 687028,
+  "d_zero_nao_rlp": 13
+ },
+ {
+  "dia": "2025-09-29",
+  "eventos": 1488028,
+  "d_exato": 761210,
+  "so_rlp": 726813,
+  "d_zero_nao_rlp": 5
+ },
+ {
+  "dia": "2025-09-30",
+  "eventos": 1542902,
+  "d_exato": 773869,
+  "so_rlp": 769023,
+  "d_zero_nao_rlp": 10
+ }
+]
+2026-10-01 17:29:02 FIM extração
+2026-10-01 17:29:17 análise passos 1–3
+{"parada_condicional": false}
+2026-10-01 17:30:01 FIM análise

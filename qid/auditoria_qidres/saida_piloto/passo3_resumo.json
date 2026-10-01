@@ -1,0 +1,8 @@
+{
+  "dias": 12,
+  "periodos_diarios": 12,
+  "blocos_5min": 1269,
+  "eventos": 3440287,
+  "d1_periodos_residuo_nao_zero": 0,
+  "dias_sid_alvo_nao_e_maior_volume": []
+}

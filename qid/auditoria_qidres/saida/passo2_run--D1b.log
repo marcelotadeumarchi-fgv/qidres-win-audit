@@ -1,0 +1,90 @@
+{
+  "dia": "2025-09-30",
+  "janela_valida": [
+    "09:15:31.183",
+    "18:10:00.002"
+  ],
+  "exclusoes": [],
+  "estados_validos": 17350863,
+  "eventos_classificados": 210630,
+  "melhorias": {
+    "recomposicao": 84404,
+    "deslocamento": 21009,
+    "undercut": 23
+  },
+  "melhorias_por_W": {
+    "100": {
+      "recomposicao": 65862,
+      "deslocamento": 38919,
+      "undercut": 655
+    },
+    "1000": {
+      "recomposicao": 84404,
+      "deslocamento": 21009,
+      "undercut": 23
+    },
+    "5000": {
+      "recomposicao": 95145,
+      "deslocamento": 10291
+    }
+  },
+  "deterioracoes_causa_A": {
+    "execucao": 90958,
+    "cancelamento": 14236
+  },
+  "deterioracoes_R10ms": 102252,
+  "deterioracoes_R10ms_sem_rlp": 102160,
+  "deterioracoes_R1ms": 101969,
+  "deterioracoes_R2_10ms": 98562,
+  "dia_qids": {
+    "qid_R": 0.015330688340202611,
+    "qid_R_semrlp": 0.015780650879593055,
+    "qid_R_1ms": 0.01671608688315132,
+    "qid_R2": 0.033696408788321454,
+    "qid_A": 0.0737191563897064,
+    "qid_U": -0.9994943999296556,
+    "bqid_R": 0.014433906629155911,
+    "aqid_R": 0.016220467909180726,
+    "theta": 0.864669087590547,
+    "qid_composicao": 0.07257636934622132
+  },
+  "dia_controles": {
+    "spread_tw_ticks": 1.0098555858885854,
+    "pct_spread_tw": 3.4313764550154294e-05,
+    "frac_1tick": 0.9901972068257331,
+    "volume": 12860523,
+    "qvol": 0.00024378006815639237,
+    "delta_spread_ticks": 0
+  },
+  "d1_dia": {
+    "delta_spread_ticks": 0,
+    "soma_ticks_det": 106063,
+    "soma_ticks_impr": 106063,
+    "d1_residuo": 0
+  },
+  "d1_blocos_5min": {
+    "n_blocos": 106,
+    "n_residuo_nao_zero": 0
+  },
+  "blocos_qid_ausente": 0,
+  "share_1tick_impr": 0.9953146932736446,
+  "share_1tick_det_trade": 0.9929781324570669,
+  "eventos_multipacote": 20556,
+  "eventos_classificados_saldo_aberto": 4,
+  "eventos_classificados_saldo_negativo": 3801,
+  "anomalias_livro": {
+    "change_sem_negocio": 89771,
+    "change_aumenta": 0,
+    "delete_orfao": 0,
+    "change_orfao": 0,
+    "oid_duplicado": 0
+  },
+  "conflito_causa_A": 3403,
+  "amostra_por_classe": {
+    "undercut": 20,
+    "recomposicao": 20,
+    "deslocamento": 20,
+    "det_execucao": 20,
+    "det_cancelamento": 20
+  }
+}

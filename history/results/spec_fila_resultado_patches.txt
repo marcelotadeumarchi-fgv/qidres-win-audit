@@ -1,0 +1,102 @@
+NARROW-SPREAD (WIN)            388,543 one-second rows, 12 days
+WIDE-SPREAD (control)          314,556 one-second rows, 12 days
+
+============================================================================================
+P3b — INTRA-ASSET REGIME TEST  (constrained vs unconstrained, same instrument)
+============================================================================================
+  CONSTRAINED  : spread was 1 tick for the whole window -> price
+                 improvement is ILLEGAL, so the price channel is shut.
+  UNCONSTRAINED: spread exceeded 1 tick -> improvement is legal.
+
+  NARROW-SPREAD (WIN)
+    windows: constrained 140,260 (36.1%)  unconstrained 248,283 (63.9%)
+    regime             hsignal          beta        z          p  partial R2         n
+    constrained       5sfqcr         -0.0041    -0.27    0.78678     0.0000%   140,200  
+    constrained       5sur_price      0.0000     0.30    0.76732     0.0000%   140,200  
+    constrained      10sfqcr         -0.0119    -0.54    0.59191     0.0002%   140,140  
+    constrained      10sur_price     -0.0000    -0.92    0.35560     0.0000%   140,140  
+    unconstrained     5sfqcr          0.0245     1.11    0.26894     0.0006%   248,223  
+    unconstrained     5sur_price      0.0055     3.40    0.00068     0.0056%   248,223  **
+    unconstrained    10sfqcr          0.0667     2.17    0.03032     0.0024%   248,163  *
+    unconstrained    10sur_price      0.0073     3.66    0.00026     0.0049%   248,163  **
+
+  WIDE-SPREAD (control)
+    windows: constrained 1,710 (0.5%)  unconstrained 312,846 (99.5%)
+    regime             hsignal          beta        z          p  partial R2         n
+    constrained       5sfqcr         -2.6418    -1.88    0.06079     0.4216%     1,650  
+    constrained       5sur_price      0.0000     2.36    0.01843     0.0000%     1,650  *
+    constrained      10sfqcr         -3.1258    -1.81    0.06955     0.3266%     1,590  
+    constrained      10sur_price      0.0000     1.29    0.19553     0.0000%     1,590  
+    unconstrained     5sfqcr          0.0516     7.72    0.00000     0.0207%   312,786  **
+    unconstrained     5sur_price      0.0001     2.95    0.00322     0.0036%   312,786  **
+    unconstrained    10sfqcr          0.0536     5.25    0.00000     0.0108%   312,726  **
+    unconstrained    10sur_price     -0.0000    -0.04    0.96871     0.0000%   312,726  
+
+
+============================================================================================
+P2a — LEAD-LAG with lagged RETURN and OFI controls   (signal = fqcr)
+============================================================================================
+  R(t+k) = a + SUM_j b_j*SIGNAL(t-j) + SUM_j g_j*R(t-j) + SUM_j d_j*OFI(t-j)
+  P = 5 lags. The forward capacity is the JOINT test on the
+  SIGNAL block AFTER past returns and past order flow are controlled.
+
+  regime             k        b_0     z_0    sum b_j   F(joint)   p(joint)         n
+  NARROW-SPREAD     5s    -0.0592   -5.89    -0.1487     11.072    0.00000   388,411  **
+  NARROW-SPREAD    10s    -0.0642   -4.83    -0.1980      5.972    0.00000   388,351  **
+  WIDE-SPREAD (c    5s    -0.0043   -0.88     0.0183      2.632    0.01493   314,424  *
+  WIDE-SPREAD (c   10s    -0.0013   -0.19     0.0298      2.175    0.04225   314,364  *
+
+============================================================================================
+P2b — PLACEBO by PARTIAL R-SQUARED   (signal = fqcr)
+============================================================================================
+  FORWARD : partial R2 of SIGNAL(t) explaining R(t+k)
+  BACKWARD: partial R2 of R(t-k) explaining SIGNAL(t)
+  Both controlled for aggregate cancellation and OFI, so the two are
+  commensurable. Raw coefficients are NOT (different dependent vars).
+
+  regime             k  fwd partial R2  bwd partial R2  ratio bwd/fwd     verdict
+  NARROW-SPREAD     5s         0.0001%         8.1469%       58915.72    REACTIVE
+  NARROW-SPREAD    10s         0.0005%         6.9006%       13286.62    REACTIVE
+  WIDE-SPREAD (c    5s         0.0181%         0.0017%           0.09          ok
+  WIDE-SPREAD (c   10s         0.0097%         0.0287%           2.96    REACTIVE
+
+  verdict REACTIVE: the past return explains the signal better than the
+  signal explains the future return -> reject as a reactive artifact.
+
+============================================================================================
+P2a — LEAD-LAG with lagged RETURN and OFI controls   (signal = qcr)
+============================================================================================
+  R(t+k) = a + SUM_j b_j*SIGNAL(t-j) + SUM_j g_j*R(t-j) + SUM_j d_j*OFI(t-j)
+  P = 5 lags. The forward capacity is the JOINT test on the
+  SIGNAL block AFTER past returns and past order flow are controlled.
+
+  regime             k        b_0     z_0    sum b_j   F(joint)   p(joint)         n
+  NARROW-SPREAD     5s    -0.0004   -3.88    -0.0009      4.803    0.00007   388,411  **
+  NARROW-SPREAD    10s    -0.0004   -3.11    -0.0012      2.395    0.02577   388,351  *
+  WIDE-SPREAD (c    5s     0.0000    1.55     0.0001      0.498    0.81061   314,424  
+  WIDE-SPREAD (c   10s     0.0000    0.91     0.0002      0.268    0.95206   314,364  
+
+============================================================================================
+P2b — PLACEBO by PARTIAL R-SQUARED   (signal = qcr)
+============================================================================================
+  FORWARD : partial R2 of SIGNAL(t) explaining R(t+k)
+  BACKWARD: partial R2 of R(t-k) explaining SIGNAL(t)
+  Both controlled for aggregate cancellation and OFI, so the two are
+  commensurable. Raw coefficients are NOT (different dependent vars).
+
+  regime             k  fwd partial R2  bwd partial R2  ratio bwd/fwd     verdict
+  NARROW-SPREAD     5s         0.0002%         1.5843%        7087.55    REACTIVE
+  NARROW-SPREAD    10s         0.0003%         1.4089%        4220.55    REACTIVE
+  WIDE-SPREAD (c    5s         0.0000%         0.1004%       14784.41    REACTIVE
+  WIDE-SPREAD (c   10s         0.0000%         0.0028%         177.09    REACTIVE
+
+  verdict REACTIVE: the past return explains the signal better than the
+  signal explains the future return -> reject as a reactive artifact.
+
+============================================================================================
+PATCH RUN — SPECIFICATION COUNT
+============================================================================================
+  32 specifications estimated in this patch run.
+  P1b (live-size FIFO) was already implemented and is not re-tested here.
+  P1a (event windows) requires a separate replay — see spec_evento.py.
+============================================================================================

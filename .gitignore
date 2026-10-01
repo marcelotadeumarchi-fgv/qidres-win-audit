@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# Secrets — never commit
+.env
+*.env
+
+# Large / regenerable data (see README, "Regenerating the data")
+qid/auditoria_qidres/cache/
+qid/auditoria_qidres/saida/por_dia/
+qid/auditoria_qidres/saida_piloto/por_dia/
+qid/auditoria_qidres/saida/rodada3/negocios_eventos_*.parquet
+qid/auditoria_qidres/saida_piloto/events_classified.parquet
+qid/auditoria_qidres/saida*/passo2*/*.parquet
+qid/output_data/microstructure/undercut_valid_events_*.parquet
+qid/output_data/spec_fila/
+qid/output_data/evento/
+qid/output_data/painel1s/
+qid/output_data/tese_apendice_a/qid_res_5m_200001274203_*.parquet
+
+# Generated figures/videos from the replay
+qid/*.png
+qid/*.gif
+qid/*.mp4

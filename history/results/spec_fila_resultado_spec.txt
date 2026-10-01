@@ -1,0 +1,99 @@
+NARROW-SPREAD (WIN, 1 tick 99.0% of day)         388,543 one-second rows, 12 days
+WIDE-SPREAD (control, mean 2.67 ticks)           314,556 one-second rows, 12 days
+
+============================================================================================
+H1 — DECAY OF PRICE-BASED UNDERCUTTING ACROSS REGIMES  (SPEC §3.1)
+============================================================================================
+  R(t+h) = a + b1*UR_price(t) + controls.  Spec expects b1 significant in the
+  wide-spread regime and broken in the narrow-spread one.
+  NOTE: tick = 5.0 in BOTH regimes, so this contrasts LIQUIDITY, not tick size.
+
+  regime             h        beta        z          p       R2  mean run len         n
+  NARROW-SPREAD     1s      -0.001    -2.01    0.04404   1.660%          1.64   388,531  *
+  NARROW-SPREAD     5s      -0.001    -0.46    0.64891   0.363%          1.64   388,483  
+  NARROW-SPREAD    10s      -0.000    -0.10    0.92163   0.215%          1.64   388,423  
+  NARROW-SPREAD    30s      -0.000    -0.07    0.94480   0.115%          1.64   388,183  
+  WIDE-SPREAD (c    1s       0.000     1.35    0.17564   0.223%          2.14   314,544  
+  WIDE-SPREAD (c    5s       0.000     2.34    0.01917   0.070%          2.14   314,496  *
+  WIDE-SPREAD (c   10s      -0.000    -0.13    0.89397   0.047%          2.14   314,436  
+  WIDE-SPREAD (c   30s      -0.000    -0.32    0.75042   0.157%          2.14   314,196  
+
+============================================================================================
+H2 GATE — REVERSE CAUSALITY (addition to the spec; see module docstring)
+============================================================================================
+  If FQCR explains the PAST return better than the FUTURE one, it is a
+  response, not anticipation, and H2 cannot be interpreted as informational.
+
+  regime             h   beta_fwd   beta_bwd   |fwd|>|bwd|
+  NARROW-SPREAD     5s     0.0065    -1.5300            NO
+  NARROW-SPREAD    10s     0.0177    -2.0069            NO
+  -> NARROW-SPREAD : gate FAIL — H2 is response, not anticipation
+  WIDE-SPREAD (c    5s     0.0481     0.0145           YES
+  WIDE-SPREAD (c   10s     0.0506     0.0860            NO
+  -> WIDE-SPREAD (c: gate FAIL — H2 is response, not anticipation
+
+============================================================================================
+H2 — INFORMATIONAL CONTENT OF FRONT-OF-QUEUE CANCELLATIONS  (SPEC §3.2)
+============================================================================================
+  R(t+h) = a + b1*FQCR + b2*AggregateCancel + b3*OFI.
+  Spec expects FQCR to beat AggregateCancel in explanatory power.
+
+  NARROW-SPREAD (WIN, 1 tick 99.0% of day)
+       hsignal                beta        z          p       R2          n
+      1sFQCR                0.0211     6.09    0.00000   0.136%    388,531  **
+      1sBQCR(back)          0.0100     3.50    0.00046   0.130%    388,531  **
+      1sAggCancel          -0.0374   -27.43    0.00000   0.129%    388,531  **
+      5sFQCR                0.0065     0.65    0.51701   0.066%    388,483  
+      5sBQCR(back)          0.0203     2.64    0.00825   0.067%    388,483  **
+      5sAggCancel          -0.0551   -14.51    0.00000   0.066%    388,483  **
+     10sFQCR                0.0177     1.25    0.21110   0.047%    388,423  
+     10sBQCR(back)          0.0159     1.41    0.15857   0.047%    388,423  
+     10sAggCancel          -0.0598   -10.57    0.00000   0.047%    388,423  **
+     30sFQCR                0.0603     2.58    0.00999   0.053%    388,183  **
+     30sBQCR(back)         -0.0065    -0.33    0.73829   0.051%    388,183  
+     30sAggCancel          -0.0362    -3.59    0.00033   0.051%    388,183  **
+
+  WIDE-SPREAD (control, mean 2.67 ticks)
+       hsignal                beta        z          p       R2          n
+      1sFQCR                0.0322    13.60    0.00000   0.093%    314,544  **
+      1sBQCR(back)         -0.0257    -5.15    0.00000   0.056%    314,544  **
+      1sAggCancel           0.0025     1.64    0.10080   0.051%    314,544  
+      5sFQCR                0.0481     7.27    0.00000   0.050%    314,496  **
+      5sBQCR(back)         -0.0364    -2.57    0.01028   0.034%    314,496  *
+      5sAggCancel           0.0088     1.73    0.08294   0.032%    314,496  
+     10sFQCR                0.0506     4.99    0.00000   0.038%    314,436  **
+     10sBQCR(back)         -0.0274    -1.29    0.19753   0.029%    314,436  
+     10sAggCancel           0.0134     1.71    0.08674   0.028%    314,436  
+     30sFQCR                0.0773     4.19    0.00003   0.065%    314,196  **
+     30sBQCR(back)         -0.0443    -1.16    0.24537   0.058%    314,196  
+     30sAggCancel           0.0458     3.16    0.00158   0.057%    314,196  **
+
+
+============================================================================================
+H3 — QUEUE CANCELLATION RUNS AS PREDICTORS  (SPEC §3.3)
+============================================================================================
+  Logit: P(mid moves over h) ~ QCR intensity + controls.
+  Plus drift / spread-widening / volatility after QCR vs a baseline.
+
+  NARROW-SPREAD (WIN, 1 tick 99.0% of day)
+       h  logit b_QCR        z          p  drift QCR  drift base          n
+      1s      -0.0004    -1.41    0.15742    -0.0111      0.1124    388,531  
+      5s      -0.0001    -0.47    0.63610    -0.0270      0.3557    388,483  
+     10s       0.0005     1.79    0.07419    -0.0160      0.5373    388,423  
+     30s      -0.0003    -1.01    0.31354    -0.0017      0.9975    388,183  
+
+  WIDE-SPREAD (control, mean 2.67 ticks)
+       h  logit b_QCR        z          p  drift QCR  drift base          n
+      1s       0.0000     0.46    0.64843     0.0025      0.2130    314,544  
+      5s       0.0001     0.52    0.60074     0.0067      0.5485    314,496  
+     10s      -0.0001    -1.14    0.25602     0.0048      0.8046    314,436  
+     30s      -0.0001    -0.49    0.62119     0.0230      1.4563    314,196  
+
+
+============================================================================================
+SPECIFICATION COUNT
+============================================================================================
+  48 specifications estimated in this run.
+  H1 causal attribution NOT identified (tick constant across buckets).
+  SPEC §4 tick-size deciles and §5 tick-to-price plot NOT executable.
+============================================================================================

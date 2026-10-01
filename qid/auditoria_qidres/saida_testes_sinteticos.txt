@@ -1,0 +1,23 @@
+PASSOU  teste_1_corrida_limpa: 3 melhorias ['undercut', 'undercut', 'undercut'], 1 det. execucao; QID_A=0.500 QID_R=0.500 QID_U=0.500
+PASSOU  teste_2_recomposicao: 1 det. execucao; 1 melhoria 'recomposicao'; 0 undercuts (W=100ms: undercut, W=5s: recomposicao)
+PASSOU  teste_3_deslocamento: 1 det. ask execucao; 1 melhoria bid 'deslocamento' (W=100ms: undercut)
+PASSOU  teste_4_varredura: 1 deterioração de 3 ticks no ask, causa execucao
+PASSOU  teste_5_cancelamento: 1 det. cancelamento em todos; negócio nenhum -> R=False; negócio 5 ms antes -> R=True; negócio 50 ms antes -> R=False
+PASSOU  teste_6_identidade: 300 sequências, 2100 períodos, 16271 eventos classificados: resíduo D1 = 0 em todos
+PASSOU  teste_7_leilao: 0 eventos no leilão nem no 1º estado posterior (referência em t=20000, bid 110/ask 111); 1 evento depois; D1 = 0
+PASSOU  teste_8_qidres: [forte] 20 trim.; b̂ médio=0.378 (verd. 0.4, cobertura IC95 por trim.=90%); â médio=0.121 (verd. 0.3); QIDres N=1240 média=-0.001 DP=0.744 (teórico sqrt(1-R²)=0.707, R²=0.50)
+         [fraco] 20 trim.; b̂ médio=0.058 (verd. 0.08, cobertura IC95 por trim.=90%); â médio=0.121 (verd. 0.3); QIDres N=1240 média=-0.001 DP=1.023 (teórico sqrt(1-R²)=0.981, R²=0.04)
+PASSOU  teste_9_varredura_fragmentada: evento em 3 pacotes -> 1 deterioração de 3 ticks, execucao; literal por msg_seq_num daria 2 deteriorações com causas ['cancelamento', 'cancelamento']
+PASSOU  teste_10_rlp: det. cancelamento; R(10ms)=True, R sem RLP=False
+PASSOU  teste_11_deslocamento_mesmo_evento: det. ask execucao + melhoria bid 'deslocamento' no mesmo evento
+PASSOU  teste_12_qidres_semanal_hora: 25 semanas; b̂ médio=0.0471 (verd. 0.05); QIDres N=1190 média=+0.009 DP=0.783; hora sem categoria na semana anterior -> não identificada
+PASSOU  teste_extra_tick_nao_inteiro: preço fora da grade de 5 pontos interrompe (AssertionError)
+PASSOU  teste_extra_fora_de_ordem: evento com t anterior ao último estado interrompe (sem leitura de futuro)
+PASSOU  teste_extra_regressao_sem_futuro: parâmetros sempre do trimestre anterior; S(QID) = DP dos QIDs diários de q−1
+PASSOU  teste_extra_variancia_zero: controle com variância zero -> 'nao_identificada', sem QIDres
+PASSOU  teste_extra_unidades_spread: pct_spread_tw=3.401e-05 (esperado 3.401e-05); qvol=3.40e-05
+PASSOU  teste_r2_tarefa2_funcoes: partial R²=0.182 (esperado 0.200); defasagens respeitam lacunas e pregões; OFI=[np.float64(0.0), np.float64(3.0), np.float64(7.0), np.float64(4.0)]
+PASSOU  teste_r2_tarefa3_funcoes: Σφ = 0.7291 = R² total; 4 colunas; linear fora da fronteira
+PASSOU  teste_r3_confiabilidade_e_wild: SB=0.910 (teórico 0.909, IC [0.891, 0.928]); cobertura do IC wild (Webb, 12 clusters) para β: 34/40
+
+20/20 testes passaram

@@ -1,0 +1,45 @@
+
+======================================================================================
+PROTOCOL ESTIMATION  —  HOLD-OUT REVEALED (09-29, 09-30)
+======================================================================================
+protocol sha256 404c60e902b436a193f3d8c41044fd0785b68a24d90092e1bdf2e4e4ca411ab3
+days: 12  (2025-09-15 .. 2025-09-30)
+1-min windows in session: 6,485
+
+======================================================================================
+§4  PRIMARY SPECIFICATION  —  ONE test, decision rule p < 0.01
+======================================================================================
+  R(t->t+1min) = a + b*QID_signed(t) + g*S(t) + hour dummies
+  signal : strict undercut volume imbalance / passive order volume
+  target : microprice return, close(t) -> close(t+1), bp
+
+    beta            =         -0.205
+    z (HAC, lag 2)  =         -0.023
+    p               =        0.98173
+    R2              =         0.135%
+    n               =          6,473
+    1-sd effect     =         -0.011 index points (vs 5.0 pt crossing cost)
+
+    declared prior  : beta < 0 (Barardehi mechanism)
+    p < 0.01        : NO
+    sign matches    : YES
+
+======================================================================================
+§5.1  HORIZON SET (reported together; no single p interpreted alone)
+======================================================================================
+  h                 beta        z         p        R2        n
+  1min             -0.20   -0.023   0.98173    0.135%    6,473
+  5min             -0.14   -0.007   0.99422    0.490%    6,425
+  15min            35.63    1.101   0.27083    1.683%    6,305
+
+  sign stable across horizons: NO
+
+======================================================================================
+PRIMARY DECISION (§4)
+======================================================================================
+  H1 supported only if p < 0.01 AND sign stable across horizons.
+    p < 0.01: False    sign stable: False
+  >>> H1 NOT SUPPORTED <<<
+
+======================================================================================
+§5.2  VARIANTS (robustness; isolate one design choice each)

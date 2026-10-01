@@ -1,0 +1,13 @@
+DIAGNOSTIC (not a test of H1): why did the earlier exploratory z=2.644 vanish?
+Isolating ONE difference at a time, 5-min windows, training days.
+
+  price basis for the return                      beta        z         p       R2
+--------------------------------------------------------------------------------
+  close-to-close (PROTOCOL §3.5)                -52.20   -0.626   0.53155   0.639%
+  close-to-close, L1 midpoint                   -50.30   -0.606   0.54465   0.636%
+  window MEAN midpoint (old exploratory)        417.72    4.773   0.00000   2.844%
+--------------------------------------------------------------------------------
+
+  A window MEAN price overlaps the window in which the signal is measured;
+  a close-to-close return does not. This is exactly the contemporaneity
+  leak that thesis §6.2 warns about and the protocol §3.5 guards against.

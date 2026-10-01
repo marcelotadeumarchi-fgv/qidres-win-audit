@@ -1,0 +1,27 @@
+{
+  "dia": "2025-09-30",
+  "eventos_de_casamento": 18557992,
+  "eventos_comparados": 17784015,
+  "divergencias_melhor_bid": 0,
+  "divergencias_melhor_ask": 0,
+  "eventos_com_negocio_nao_rlp": 865439,
+  "eventos_multipacote": 50834,
+  "eventos_saldo_fecha_zero": 842970,
+  "eventos_saldo_aberto_positivo": 10488,
+  "eventos_saldo_negativo": 11981,
+  "volume_nao_rlp": 10343208,
+  "volume_saldo_aberto": 1509885,
+  "anomalias_livro": {
+    "change_sem_negocio": 94555,
+    "change_aumenta": 0,
+    "delete_orfao": 0,
+    "change_orfao": 0,
+    "oid_duplicado": 0
+  },
+  "conflito_causa_A": 3727,
+  "replay_integridade": {
+    "orphan_deletes": 0,
+    "orphan_changes": 0,
+    "neg_size_ticks": 0
+  }
+}

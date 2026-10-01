@@ -1,0 +1,5 @@
+2026-10-01 16:29:24 início rodada 2 / tarefa 1
+2026-10-01 16:29:24 passo 3
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+2026-10-01 16:38:16 INTERROMPIDO a pedido do usuário (rodada 2 / tarefa 1, durante o passo 3)
