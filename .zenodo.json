@@ -1,0 +1,16 @@
+{
+  "title": "QIDres audit on the WIN mini-index future (B3): code, specification and results",
+  "upload_type": "software",
+  "creators": [
+    {"name": "Marchi, Marcelo Tadeu", "affiliation": "Fundação Getulio Vargas (FGV)"}
+  ],
+  "description": "<p>Audit of the QIDres informed-trading measure (Barardehi, Dixon and Liu, <em>Detecting Informed Trading Risk from Undercutting Activity</em>, Journal of Finance) on market-by-order (MBO) data for the B3 mini-index future WINV25, 12 trading sessions (15–30 September 2025).</p><p>Contents: an order-book engine per matching event (validated against a reference replay), the audit specification, 20 synthetic tests, the report, a run log with approved deviations and a pre-registration, and small derived results. Raw exchange data is not included; the README explains how to regenerate the large intermediate files from B3 UMDF MBO data.</p><p>Documentation is in Portuguese.</p>",
+  "license": "MIT",
+  "version": "1.0.0",
+  "language": "por",
+  "keywords": ["market microstructure", "informed trading", "undercutting", "QIDres", "adverse selection", "tick size", "B3", "futures", "market-by-order"],
+  "related_identifiers": [
+    {"identifier": "https://papers.ssrn.com/abstract=4689334", "relation": "references", "resource_type": "publication-article"},
+    {"identifier": "https://github.com/marcelotadeumarchi-fgv/qidres-win-audit", "relation": "isSupplementTo", "resource_type": "software"}
+  ]
+}

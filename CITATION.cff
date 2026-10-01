@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "QIDres audit on the WIN mini-index future (B3): code, specification and results"
+type: software
+authors:
+  - family-names: Marchi
+    given-names: Marcelo Tadeu
+    affiliation: "Fundação Getulio Vargas (FGV)"
+version: 1.0.0
+date-released: 2026-10-01
+license: MIT
+repository-code: "https://github.com/marcelotadeumarchi-fgv/qidres-win-audit"
+abstract: >-
+  Audit of the QIDres informed-trading measure (Barardehi, Dixon and Liu,
+  "Detecting Informed Trading Risk from Undercutting Activity", Journal of
+  Finance) on market-by-order data for the B3 mini-index future WINV25, 12
+  trading sessions (15-30 September 2025). Includes a book-reconstruction
+  engine per matching event, the audit specification, synthetic tests, the
+  report, a run log with approved deviations and a pre-registration, and
+  small derived results. Raw exchange data is not included.
+keywords:
+  - market microstructure
+  - informed trading
+  - undercutting
+  - QIDres
+  - adverse selection
+  - tick size
+  - B3
+  - futures
+  - market-by-order
+references:
+  - type: article
+    title: "Detecting Informed Trading Risk from Undercutting Activity"
+    authors:
+      - family-names: Barardehi
+        given-names: Yashar H.
+      - family-names: Dixon
+        given-names: Peter
+      - family-names: Liu
+        given-names: Qiyu
+    journal: "Journal of Finance"
+    url: "https://papers.ssrn.com/abstract=4689334"
