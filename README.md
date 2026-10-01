@@ -1,5 +1,8 @@
 # QIDres audit on the WIN mini-index future (B3)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23091936.svg)](https://doi.org/10.5281/zenodo.23091936)
+
+
 Audit of the informed-trading measure **QIDres** (Barardehi, Dixon & Liu, *Journal of Finance*,
 “Detecting Informed Trading Risk from Undercutting Activity”) on market-by-order (MBO) data for the
 B3 mini-index future **WINV25** (`security_id 200001274203`), 12 trading sessions, 15–30 Sep 2025.
@@ -16,6 +19,17 @@ Documentation is in Portuguese:
 | `qid/auditoria_qidres/relatorio.md` | Report: pilot (sections 1–4), round 3 (section 7), round 3b (section 8), E4 (section 9) |
 | `qid/auditoria_qidres/run_log.md` | Decisions, approved deviations (D-1′, D-2, D-3, D-4), pre-registration, exploratory tests (E1–E4), code hashes |
 | `MANIFEST.md` | Provenance: every file’s original path and SHA-256 |
+
+## How to cite
+
+Marchi, M. T. (2026). *QIDres audit on the WIN mini-index future (B3): code, specification and results*
+(Version 1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.23091937
+
+- All versions (concept DOI, always resolves to the latest): https://doi.org/10.5281/zenodo.23091936
+- Version 1.0.0: https://doi.org/10.5281/zenodo.23091937
+
+The audited measure is from Barardehi, Y. H., Dixon, P., & Liu, Q., “Detecting Informed Trading Risk from
+Undercutting Activity”, *Journal of Finance* (forthcoming), https://papers.ssrn.com/abstract=4689334.
 
 ## Layout
 

@@ -7,6 +7,14 @@ authors:
     given-names: Marcelo Tadeu
     affiliation: "Fundação Getulio Vargas (FGV)"
 version: 1.0.0
+doi: 10.5281/zenodo.23091936
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23091936
+    description: "Concept DOI (all versions)"
+  - type: doi
+    value: 10.5281/zenodo.23091937
+    description: "Version 1.0.0"
 date-released: 2026-10-01
 license: MIT
 repository-code: "https://github.com/marcelotadeumarchi-fgv/qidres-win-audit"
